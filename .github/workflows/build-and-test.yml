@@ -11,7 +11,7 @@ on:
 jobs:
   build:
     name: 'Build (${{ matrix.os }}, Node ${{ matrix.node }})'
-    runs-on: ${{ matrix.os }}
+    runs-on: warp-ubuntu-latest-arm64-4x
     strategy:
       fail-fast: false
       matrix:
@@ -32,7 +32,7 @@ jobs:
 
   integration:
     name: 'Integration Tests (${{ matrix.os }}, Node ${{ matrix.node }})'
-    runs-on: ${{ matrix.os }}
+    runs-on: warp-ubuntu-latest-arm64-4x
     strategy:
       fail-fast: false
       matrix:
@@ -58,18 +58,21 @@ jobs:
         run: npm run test:integration
 
   e2e-simple:
+    runs-on: warp-ubuntu-latest-arm64-4x
     name: E2E Simple
     uses: ./.github/workflows/e2e-base.yml
     with:
       testScript: 'tasks/e2e-simple.sh'
 
   e2e-installs:
+    runs-on: warp-ubuntu-latest-arm64-4x
     name: E2E Installs
     uses: ./.github/workflows/e2e-base.yml
     with:
       testScript: 'tasks/e2e-installs.sh'
 
   e2e-kitchensink:
+    runs-on: warp-ubuntu-latest-arm64-4x
     name: E2E Kitchensink
     uses: ./.github/workflows/e2e-base.yml
     with:
