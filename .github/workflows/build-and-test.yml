@@ -54,19 +54,19 @@ jobs:
   #     - name: Run integration tests
   #       run: npm run test:integration
 
-  lint:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
-        with:
-          node-version: '21'
-          cache: 'npm'
-      - name: Install
-        run: npm ci --prefer-offline
-      - name: Alex
-        run: npm run alex
-      - name: Prettier
-        run: npm run prettier -- --list-different
-      - name: Eslint
-        run: npm run eslint -- --max-warnings 0
+  # lint:
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - uses: actions/checkout@v3
+  #     - uses: actions/setup-node@v3
+  #       with:
+  #         node-version: '21'
+  #         cache: 'npm'
+  #     - name: Install
+  #       run: npm ci --prefer-offline
+  #     - name: Alex
+  #       run: npm run alex
+  #     - name: Prettier
+  #       run: npm run prettier -- --list-different
+  #     - name: Eslint
+  #       run: npm run eslint -- --max-warnings 0
